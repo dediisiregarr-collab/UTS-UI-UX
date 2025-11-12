@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Upload Foto Mesjid</title>
+    <style>
+        .form-container {
+            width: 600px; 
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #000;
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        label {
+            width: 130px;
+        }
+        select, input[type="text"] {
+            flex: 1;
+            padding: 5px;
+            font-size: 14px;
+        }
+        input[type="file"] {
+            margin-top: 10px;
+        }
+        button {
+            margin-left: 130px;
+            padding: 5px 15px;
+            font-size: 14px;
+        }
+        .photo-description {
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            padding: 10px 0;
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .photo-box {
+            width: 120px;
+            height: 100px;
+            border: 2px solid #000;
+            position: relative;
+        }
+        .photo-box::before, .photo-box::after {
+            content: "";
+            position: absolute;
+            background: black;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 2px;
+        }
+        .photo-box::before {
+            transform: rotate(45deg);
+        }
+        .photo-box::after {
+            transform: rotate(-45deg);
+        }
+        .description-text {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.4;
+            white-space: pre-line;
+        }
+        .caption {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form>
+            <h3>Form Upload Foto Mesjid</h3>
+            <div class="form-group">
+                <label for="namaMesjid">Nama Mesjid</label>
+                <select id="namaMesjid" name="namaMesjid">
+                    <option value="mesjid_nf">Mesjid NF</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="judulFoto">Judul Foto</label>
+                <input type="text" id="judulFoto" name="judulFoto" placeholder="Masukkan judul foto">
+            </div>
+            <div class="form-group">
+                <label for="keteranganFoto">Keterangan Foto</label>
+                <input type="text" id="keteranganFoto" name="keteranganFoto" placeholder="Masukkan keterangan foto">
+            </div>
+            <div class="form-group">
+                <label></label>
+                <button type="submit">Upload Foto</button>
+            </div>
+        </form>
+
+        <div class="photo-description">
+            <div class="photo-box" aria-label="Tempat foto tampak depan"></div>
+            <div class="description-text">
+                <div class="caption">Tampak Depan</div>
+            </div>
+        </div>
+
+        <div class="photo-description" style="margin-top: 20px;">
+            <div class="photo-box" aria-label="Tempat foto mimbar mesjid"></div>
+            <div class="description-text">
+                <div class="caption">Mimbar Mesjid</div>     
+            </div>
+        </div>
+    </div>
+</body>
+</html>
